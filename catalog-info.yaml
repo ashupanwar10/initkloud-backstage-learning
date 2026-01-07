@@ -1,0 +1,36 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-initkloud
+  description: The team responsible for the development and maintenance of the initKloud application.
+spec:
+  type: team
+  profile:
+    displayName: InitKloud Team
+    email: initkloud-team@initkloud.com
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: initkloud-system
+spec:
+  owner: team-initkloud
+  description: The system encompassing all services and components related to the initKloud application.
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: init-auth-service
+  description: Initialization Authentication Service for initKloud application
+  tags:
+    - initkloud
+    - auth-service
+    - javascript
+    - nodejs
+spec:
+  type: service
+  lifecycle: experimental
+  owner: team-initkloud
+  system: initkloud-system
