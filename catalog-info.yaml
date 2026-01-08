@@ -76,7 +76,6 @@ spec:
   type: openapi
   lifecycle: stable
   owner: group:initkloud-team
-  system: initkloud-system
   apiProvidedBy: atlassian-jira
   definition: |
     openapi: "3.0.0"
