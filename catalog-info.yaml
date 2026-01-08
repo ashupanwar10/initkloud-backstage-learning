@@ -62,6 +62,41 @@ spec:
 
 ---
 apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: atlassian-jira-api
+  title: Atlassian Jira API
+  description: API for Atlassian Jira Service used in initKloud application
+  tags:
+    - tops
+    - atlassian
+    - jira
+    - api
+spec:
+  type: openapi
+  lifecycle: stable
+  owner: group:initkloud-team
+  system: initkloud-system
+  dependsOn:
+    - component:atlassian-jira
+  definition:
+    $text: |
+      openapi: 3.0.0
+      info:
+        title: Atlassian Jira API
+        version: 1.0.0
+      servers:
+        - url: https://api.atlassian.com/v3/api
+      paths:
+        /issues:
+          get:
+            summary: Get list of issues
+            responses:
+              '200':
+                description: Successful response
+
+---
+apiVersion: backstage.io/v1alpha1
 kind: Resource
 metadata:
   name: aireview-approval
