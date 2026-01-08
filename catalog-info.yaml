@@ -51,7 +51,7 @@ metadata:
   labels:
     approval-status: approved
 spec:
-  type: technology
+  type: service
   lifecycle: sanctioned
   owner: group:initkloud-team
   system: initkloud-system
@@ -77,8 +77,7 @@ spec:
   lifecycle: stable
   owner: group:initkloud-team
   system: initkloud-system
-  apiProvidedBy:
-    - component:atlassian-jira
+  apiProvidedBy: atlassian-jira
   definition: |
     openapi: "3.0.0"
     info:
