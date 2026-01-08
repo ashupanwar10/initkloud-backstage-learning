@@ -55,6 +55,8 @@ spec:
   lifecycle: sanctioned
   owner: group:initkloud-team
   system: initkloud-system
+  providesApis:
+    - api:atlassian-jira-api
   dependsOn:
     - resource:aireview-approval
     - resource:architecture-review-approval
@@ -76,7 +78,6 @@ spec:
   type: openapi
   lifecycle: stable
   owner: group:initkloud-team
-  apiProvidedBy: atlassian-jira
   definition: |
     openapi: "3.0.0"
     info:
