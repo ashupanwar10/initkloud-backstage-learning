@@ -1,0 +1,72 @@
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: guests
+spec:
+  type: team
+  children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: tops-team
+  description: Parent Team for all TOPS related teams
+spec:
+  type: team
+  children:
+    - ai-review-team
+    - architecture-review-team
+    - security-team
+  profile:
+    displayName: TOPS Team
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: initkloud-team
+  description: Team responsible for the initKloud application
+spec:
+  type: team
+  children: []
+  profile:
+    displayName: InitKloud Team
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: ai-review-team
+  description: Team responsible for AI Review processes
+spec:
+  type: team
+  children: []
+  profile:
+    displayName: AI Review Team
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: architecture-review-team
+  description: Team responsible for Architecture Review processes
+spec:
+  type: team
+  children: []
+  profile:
+    displayName: Architecture Review Team
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: security-team
+  description: Team responsible for security aspects of applications
+spec:
+  type: team
+  children: []
+  profile:
+    displayName: Security Team

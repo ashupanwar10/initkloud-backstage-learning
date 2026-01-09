@@ -1,0 +1,59 @@
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: guest
+spec:
+  memberOf: [guests]
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: anshupriya
+spec:
+  profile:
+    displayName: Anshupriya
+    email: anshupriya@example.com
+    picture: https://example.com/staff/anshupriya.jpeg
+  memberOf: [security-team]
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: ashishpanwar
+spec:
+  profile:
+    displayName: Ashish Panwar
+    email: ashishpanwar@example.com
+    picture: https://example.com/staff/ashishpanwar.jpeg
+  memberOf: [security-team]
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: aashvipanwar
+spec:
+  profile:
+    displayName: Aashvi Panwar
+    email: aashvipanwar@example.com
+    picture: https://example.com/staff/aashvipanwar.jpeg
+  memberOf: [architecture-review-team]
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: madanraj
+spec:
+  profile:
+    displayName: Madan Raj
+    email: madanraj@example.com
+    picture: https://example.com/staff/madanraj.jpeg
+  memberOf: [ai-review-team]
+
+---
+

@@ -1,0 +1,121 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: initkloud-system
+  description: System for initKloud application
+spec:
+  owner: group:initkloud-team
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: dropbox
+  title: Dropbox Service
+  description: Initialization Authentication Service for initKloud application
+  tags:
+    - tops
+    - initkloud
+    - architecture-review:approved
+    - security-review:approved
+    - ai-review:pending
+    - overall-approval:pending
+  labels:
+    approval-status: pending
+spec:
+  type: technology
+  lifecycle: unsanctioned
+  owner: group:initkloud-team
+  system: initkloud-system
+  dependsOn:
+    - resource:aireview-approval
+    - resource:architecture-review-approval
+    - resource:security-approval
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: atlassian-jira
+  title: Atlassian Jira
+  description: Atlassian Jira Service for initKloud application
+  tags:
+    - tops
+    - atlassian
+    - jira
+    - architecture-review:approved
+    - security-review:approved
+    - ai-review:approved
+    - overall-approval:approved
+  labels:
+    approval-status: approved
+spec:
+  type: technology
+  lifecycle: sanctioned
+  owner: group:initkloud-team
+  system: initkloud-system
+  dependsOn:
+    - resource:aireview-approval
+    - resource:architecture-review-approval
+    - resource:security-approval
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: aireview-approval
+  description: Approval resource for AI Review process
+  tags:
+    - initkloud
+    - ai-review
+spec:
+  type: approval
+  owner: group:ai-review-team
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: architecture-review-approval
+  description: Approval resource for Architecture Review process
+  tags:
+    - initkloud
+    - architecture-review
+spec:
+  type: approval
+  owner: group:architecture-review-team
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: security-approval
+  description: Approval resource for Security Review process
+  tags:
+    - initkloud
+    - security-review
+spec:
+  type: approval
+  owner: group:security-team
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: initkloud-application-onboarding-guide
+  title: InitKloud Application Onboarding Guide
+  description: Approval resource for Application Onboarding process
+  tags:
+    - initkloud
+    - application-onboarding
+  links:
+    - url: https://www.geeksforgeeks.org/artificial-intelligence/model-context-protocol-mcp/
+      title: Application Onboarding Guide
+spec:
+  type: guide
+  lifecycle: active
+  owner: group:initkloud-team
+  dependsOn:
+    - component:dropbox
+    - component:atlassian-jira
